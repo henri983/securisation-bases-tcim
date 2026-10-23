@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "securisation-bases-tcim"
+version = "1.0.0"
+description = "Plateforme sécurisée pour bases de données de Médecine Traditionnelle et Complémentaire (TCIM) avec classification intelligente IA"
+readme = "README.md"
+authors = [{ name = "henri983", email = "henrinyame2001@gmail.com" }]
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.6.0",
+    "email-validator>=2.2.0",
+    "cryptography>=43.0.0",
+    "python-jose[cryptography]>=3.3.0",
+    "bcrypt>=4.2.0",
+    "numpy>=2.0.0",
+    "httpx>=0.28.0",
+    "structlog>=24.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.8.0",
+    "bandit>=1.8.0",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+markers = [
+    "unit: Tests unitaires",
+    "integration: Tests d'intégration API",
+    "security: Tests de sécurité des bases de données",
+    "ai: Tests du moteur IA de classification intelligente",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

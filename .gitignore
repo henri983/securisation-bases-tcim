@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+.venv/
+venv/
+
+# Tests & Couverture
+.coverage
+htmlcov/
+.pytest_cache/
+.ruff_cache/
+
+# Données sensibles & Clés
+.env
+*.pem
+*.key
+*.crt
+secrets/
+*.db
+*.sqlite3
+*.log
+
+# IDE
+.vscode/
+.idea/
